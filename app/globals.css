@@ -1,107 +1,242 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
   margin: 0;
-}
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Anonymous Pro';
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html,body{
+  width: 100%;
+  height: 100vh;
 }
-
-a {
-  color: inherit;
+body{
+  background-color: black;
+}
+.nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: calc(100% - 100px);
+  z-index: 999999999999999;
+}
+.nav a{
+  font-family: 'Poppins';
   text-decoration: none;
+  font-weight: bold;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.slide-out{
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+/*/ everything starts here/*/
+
+.page{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  z-index: 10;
+}
+
+.header{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding-top: 25px;
+  padding-left: 50px;
+  z-index: 50;
+}
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  z-index: 1;
+}
+.rgbKineticSlider {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.r-page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+}
+.page1{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  padding: 25vh 5%;
+
+}
+.jess{position: absolute;z-index: 7;}
+
+/*/ ===================***===================/*/
+
+.text1{
+  max-width: 510px;
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+
+
+.page1 h1{
+  font-size: 96px;
+  margin-bottom: 50px;
+}
+.color2{
+  color: #DAF8FF;
+}
+
+/*/ new section /*/
+.btn {
+  -webkit-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: 'Roboto mono', sans-serif;
+  font-weight: 500;
+  border: 1px solid #121212;
+  line-height: 1.5;
+  font-size: em(14px);
+  padding: 16px;
+  width: 150px;
+  height: 50px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:focus {
+  outline: none;
+}
+
+.btn-clear {
+  background-color: transparent;
+}
+.btn-clear:hover {
+  background-color: #121212;
+  color: #fff;
+}
+.btn-clear.btn-light {
+  border-color: #fff;
+  color: #fff;
+}
+.btn-clear.btn-light:hover {
+  color: #121212;
+  background-color: #fff;
+}
+.btn-light:hover {
+  background-color: #121212;
+  color: #fff;
+}
+
+
+.btn-glitch {
+  transform: translateZ(0);
+  overflow: visible;
+}
+.btn-glitch.btn-glitch-active {
+  -webkit-filter: url('#filter');
+  filter: url('#filter');
+}
+.btn-glitch.btn-glitch-active::after, .btn-glitch.btn-glitch-active::before {
+  content: '';
+  width: 1px;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+}
+.btn-glitch.btn-glitch-active::after {
+  left: -2px;
+  background-color: #ff536b;
+  animation: colorshift-red 2.6s infinite;
+  animation-timing-function: step-end;
+}
+.btn-glitch.btn-glitch-active::before {
+  right: -2px;
+  background-color: #3ffeff;
+  animation: colorshift-blue 2.6s infinite;
+  animation-timing-function: step-end;
+}
+
+@keyframes colorshift-red {
+  0%, 7% {
+      background-color: #ff536b;
+ }
+  8%, 18% {
+      background-color: transparent;
+ }
+  19% {
+      background-color: #ff536b;
+      width: 2px;
+ }
+  23%, 100% {
+      background-color: transparent;
+ }
+}
+@keyframes colorshift-blue {
+  0%, 7% {
+      background-color: #3ffeff;
+ }
+  8%, 18% {
+      background-color: transparent;
+ }
+  19% {
+      background-color: #3ffeff;
+      width: 2px;
+ }
+  23%, 100% {
+      background-color: transparent;
+ }
+}
+.bgadj{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 11, 31, 0.35);
+  z-index: 99;
 }
